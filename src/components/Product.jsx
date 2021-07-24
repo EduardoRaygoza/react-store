@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Product = ({product}) => 
+const Product = ({product, handleAddToCart}) => 
   <div className="products-item">
     <img src={product.image} alt={product.title} />
     <div className="product-item-info">
@@ -8,7 +8,7 @@ const Product = ({product}) =>
       <span>$ {product.price}</span>
       <p>{product.description}</p>
     </div>
-    <button type="button">Comprar</button>
+    <button onClick={()=>handleAddToCart(product)} type="button">Comprar</button>
   </div>
  
 export default Product;
