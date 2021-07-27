@@ -51,7 +51,13 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: './assets/[name].css'
     }),
-    new Dotenv()
+    new Dotenv(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        CLIENT_ID_PP: JSON.stringify(process.env.CLIENT_ID_PP),
+        CLIENT_ID_GM: JSON.stringify(process.env.CLIENT_ID_GM)
+      }
+    })
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),

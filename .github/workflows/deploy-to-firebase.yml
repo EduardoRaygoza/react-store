@@ -1,6 +1,10 @@
 name: Build and Deploy
 on: [push]
 
+env:
+  CLIENT_ID_PP: ${{ secrets.CLIENT_ID_PP }}
+  CLIENT_ID_GM: ${{ secrets.CLIENT_ID_GM }}
+
 jobs:
   build:
     name: Build
