@@ -5,12 +5,12 @@ import AppContext from '../context/AppContext';
 import '../styles/components/Products.scss';
 
 const Products = () => {
-  const {state, addToCart} = useContext(AppContext);
-  const {products} = state;
+  const {products, addToCart} = useContext(AppContext);
   const handleAddToCart = product => {
     addToCart(product);
   }
   return(
+    products.length > 0 ?
     <div className="products">
       <div className="products-items">
         {
@@ -21,7 +21,7 @@ const Products = () => {
           /> )
         }
       </div>
-    </div>
+    </div> : <h1>Cargando...</h1>
   );
 };
  

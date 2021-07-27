@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from 'react-helmet';
-import initialState from '../initialState';
+import AppContext from '../context/AppContext';
 import Products from '../components/Products';
 
-const Home = () => 
-  <>
-    <Helmet>
-      <title>React store - Home</title>
-    </Helmet>
-    <Products products={initialState.products}/>
-  </>;
-
+const Home = () => {
+  const {products} = useContext(AppContext);
+  return (
+    <>
+      <Helmet>
+        <title>React store - Home</title>
+      </Helmet>
+      <Products products={products}/>
+    </>
+  );
+}
 export default Home;
